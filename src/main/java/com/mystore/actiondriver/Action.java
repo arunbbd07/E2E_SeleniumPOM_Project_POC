@@ -698,24 +698,13 @@ public class Action extends BaseClass implements ActionInterface {
 	
 	@Override
 	public String getTitle(WebDriver driver) {
-		boolean flag = false;
-
-		String text = driver.getTitle();
-		if (flag) {
-			System.out.println("Title of the page is: \""+text+"\"");
-		}
-		return text;
+		return driver.getTitle();	
 	}
 	
 	@Override
 	public String getCurrentURL(WebDriver driver)  {
-		boolean flag = false;
-
-		String text = driver.getCurrentUrl();
-		if (flag) {
-			System.out.println("Current URL is: \""+text+"\"");
-		}
-		return text;
+		return driver.getCurrentUrl();
+		
 	}
 	
 	@Override
