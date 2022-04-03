@@ -1,5 +1,8 @@
 package com.mystore.utility;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -12,9 +15,10 @@ public class ExtentManager {
 	public static ExtentHtmlReporter htmlReporter;
 	public static ExtentReports extent;
 	public static ExtentTest test;
+	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 	
 	public static void setExtent() {
-		htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/ExtentReport/"+"TestAutomationReport.html");
+		htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/ExtentReport/"+"TestAutomationReport_"+timeStamp+".html");
 		htmlReporter.loadXMLConfig(System.getProperty("user.dir")+"/extent-config.xml");
 		//htmlReporter.config().setDocumentTitle("Automation Test Report");
 		//htmlReporter.config().setReportName("Test Automation Report");

@@ -4,23 +4,46 @@
   <listeners>
     <listener class-name="com.mystore.utility.ListenerClass"/>
   </listeners>
-  <test thread-count="5" name="Smoke(failed)">
+  <test thread-count="5" name="Test_All(failed)">
     <parameter name="browser" value="Chrome"/>
-    <groups>
-      <run>
-        <include name="Smoke"/>
-      </run>
-    </groups>
     <classes>
-      <class name="com.mystore.testcases.IndexPageTest">
+      <class name="com.mystore.testcases.AccountCreationPageTest">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="setup"/>
+          <include name="loadConfig"/>
+          <include name="createAccountTest" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+          <include name="verifyCreateAccountPageTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.mystore.testcases.AccountCreationPageTest -->
+      <class name="com.mystore.testcases.EndToEndTest">
         <methods>
           <include name="afterSuite"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyTitle"/>
+          <include name="loadConfig"/>
+          <include name="endToEndTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.mystore.testcases.EndToEndTest -->
+      <class name="com.mystore.testcases.OrderPageTest">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="tearDown"/>
+          <include name="verifyTotalPrice" invocation-numbers="0"/>
+          <include name="setup"/>
           <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.mystore.testcases.IndexPageTest -->
+      </class> <!-- com.mystore.testcases.OrderPageTest -->
+      <class name="com.mystore.testcases.AddToCartPageTest">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="addToCartTest" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="loadConfig"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.mystore.testcases.AddToCartPageTest -->
     </classes>
-  </test> <!-- Smoke(failed) -->
+  </test> <!-- Test_All(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -3,16 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mystore.testcases.IndexPageTest">
+      <class name="com.mystore.testcases.EndToEndTest">
         <methods>
           <include name="afterSuite"/>
           <include name="setup"/>
-          <include name="verifyLogo"/>
           <include name="tearDown"/>
-          <include name="verifyTitle"/>
           <include name="loadConfig"/>
+          <include name="endToEndTest"/>
         </methods>
-      </class> <!-- com.mystore.testcases.IndexPageTest -->
+      </class> <!-- com.mystore.testcases.EndToEndTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

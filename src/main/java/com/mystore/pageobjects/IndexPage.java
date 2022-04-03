@@ -38,11 +38,13 @@ public class IndexPage extends BaseClass {
 	}
 	
 	public boolean validateLogo() throws Throwable {
+		BaseClass.getScreenshot();
 		return action.isDisplayed(getDriver(), myStoreLogo);
 	}
 	
 	public String getMyStoreTitle() {
 		String myStoreTitel=getDriver().getTitle();
+		BaseClass.getScreenshot();
 		return myStoreTitel;
 	}
 	
@@ -51,6 +53,7 @@ public class IndexPage extends BaseClass {
 		action.scrollByVisibilityOfElement(getDriver(), searchButton);
 		action.click(getDriver(), searchButton);
 		Thread.sleep(3000);
+		BaseClass.getScreenshot();
 		return new SearchResultPage();
 	}
 	
